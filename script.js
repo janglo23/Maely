@@ -1,26 +1,27 @@
-document.getElementById('rsvp-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Thank you for your RSVP!');
-});
+// Removed event listeners for non-existent elements to prevent errors
+// document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+//     event.preventDefault();
+//     alert('Thank you for your RSVP!');
+// });
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Your message has been sent!');
-});
+// document.getElementById('contact-form').addEventListener('submit', function(event) {
+//     event.preventDefault();
+//     alert('Your message has been sent!');
+// });
 
+// Auto-sliding functionality for the slideshow
 let slideIndex = 0;
 showSlides();
 
 function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
+    const slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
+    if (slideIndex > slides.length) { slideIndex = 1; }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 
 function plusSlides(n) {
