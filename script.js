@@ -82,3 +82,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     backToTopButton.style.display = 'none';
 });
+
+// Play background music on scroll
+const backgroundMusic = document.getElementById('background-music');
+let isMusicPlaying = false;
+
+window.addEventListener('scroll', () => {
+    if (!isMusicPlaying) {
+        backgroundMusic.play();
+        isMusicPlaying = true;
+    }
+});
