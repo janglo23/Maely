@@ -78,34 +78,101 @@ footer {
     width: 100%;
 }
 
+/* Slideshow container styles */
 .slideshow-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
     position: relative;
-    max-width: 300px;
+    max-width: 90%;
     margin: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Ensure slideshow images are visible */
-.mySlides {
-    display: none;
-}
-
-.mySlides:first-child {
-    display: block;
-}
-
-/* Updated the maximum width of the images to make them larger */
-.mySlides img {
-    display: block;
-    width: 100%;
-    max-width: 500px; /* Increased from 300px to 500px */
+    overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mySlides {
+    display: none;
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Navigation arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots for slideshow */
+.dots-container {
+    text-align: center;
+    padding: 10px 0;
+    background: #fce4ec;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #4a148c;
+}
+
+/* Align event details cards */
+.card-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1 1 300px;
+    max-width: 300px;
+}
+
+/* Decorative footer */
+.decorative-footer {
+    background: linear-gradient(135deg, #6a1b9a, #4a148c);
+    color: #fce4ec;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
 }
 
 img {
