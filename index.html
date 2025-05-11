@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="gradient-header">
         <h1>You're Invited to Josh Maely's Birthday Party!</h1>
         <p>Join us for a fun and stylish celebration.</p>
         <p id="countdown"></p>
@@ -15,25 +15,50 @@
     <main>
         <section id="celebrant-photo">
             <h2>Meet the Celebrant</h2>
-            <img src="images/celebrant.1.jpg" alt="Celebrant Photo" style="width:100%; max-width:1500px; border-radius:10px;">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images/celebrant.1.jpg" alt="Celebrant Photo 1">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/celebrant.2.jpg" alt="Celebrant Photo 2">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/celebrant.3.jpg" alt="Celebrant Photo 3">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
         </section>
-        <section id="event-details">
+        <section id="event-details" class="card-layout">
             <h2>Event Details</h2>
-            <p><strong>Date:</strong> May 17, 2025</p>
-            <p><strong>Time:</strong> 2:00 PM - 6:00 PM</p>
-            <p>Theme: Kuromi - Cute and Mischievous!</p>
+            <div class="card">
+                <p><strong>Date:</strong> May 17, 2025</p>
+            </div>
+            <div class="card">
+                <p><strong>Time:</strong> 2:00 PM - 6:00 PM</p>
+            </div>
+            <div class="card">
+                <p><strong>Theme:</strong> Kuromi - Cute and Mischievous!</p>
+            </div>
         </section>
         <section id="event-location">
             <h2>Event Location</h2>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3866.624803476948!2d120.77357239999999!3d14.2750899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd8700639e2d3d%3A0x54771b7521313250!2sParaiso%20de%20June%20Quijote%20Ecofarm!5e0!3m2!1sen!2sph!4v1746972536162!5m2!1sen!2sph" 
-                width="100%" 
-                height="300" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3866.624803476948!2d120.77357239999999!3d14.2750899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd8700639e2d3d%3A0x54771b7521313250!2sParaiso%20de%20June%20Quijote%20Ecofarm!5e0!3m2!1sen!2sph!4v1746972536162!5m2!1sen!2sph" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </section>
         <section id="event-directions">
             <h2>How to Get to the Event</h2>
@@ -46,7 +71,6 @@
         </section>
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>If you have any questions, feel free to reach out to us through our social media accounts or contact the following individuals:</p>
             <ul>
                 <li><strong>Facebook:</strong> <a href="https://facebook.com/sampleprofile" target="_blank">facebook.com/sampleprofile</a></li>
                 <li><strong>Instagram:</strong> <a href="https://instagram.com/sampleprofile" target="_blank">instagram.com/sampleprofile</a></li>
@@ -54,7 +78,7 @@
             </ul>
         </section>
     </main>
-    <footer>
+    <footer class="decorative-footer">
         <p>&copy; 2025 Event Organizers. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
