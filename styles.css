@@ -146,14 +146,13 @@ footer {
     background-color: #4a148c;
 }
 
-/* Align event details cards */
+/* Updated card layout for 2 by 2 columns */
 .card-layout {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     padding: 2rem;
+    justify-items: center;
 }
 
 .card {
