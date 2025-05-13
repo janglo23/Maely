@@ -662,3 +662,20 @@ body {
         object-fit: contain; /* Ensure the entire image is visible on small screens */
     }
 }
+
+/* Ensure slideshow images stretch or fit perfectly within the header */
+.hero-section .slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Match header height */
+    overflow: hidden;
+}
+
+.hero-section .slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Stretch or fit images to fill the header */
+    object-position: center;
+}
