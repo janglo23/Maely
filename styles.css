@@ -1,8 +1,11 @@
+/* Import Google Font explicitly for better compatibility */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS:wght@400;700&family=Baloo+2:wght@400;700&display=swap');
+
 /* Set the background of the website to the Kuromi theme image */
 body {
     background: url('images/kuromi-theme.png') no-repeat center center fixed;
     background-size: cover; /* Ensure the image covers the entire viewport */
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Sans MS', 'Baloo 2', cursive, sans-serif; /* Added fallback fonts */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -469,7 +472,7 @@ img {
 
 /* Ensure consistent font and responsive header and images */
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Maintain consistent font */
+    font-family: 'Comic Sans MS', 'Baloo 2', cursive, sans-serif; /* Maintain consistent font */
 }
 
 .hero-section {
@@ -482,6 +485,26 @@ body {
     width: 100%; /* Make images responsive */
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Ensure images cover the container */
+}
+
+/* Ensure slideshow images auto-adjust to the screen ratio on mobile */
+.hero-section .slideshow-container img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Adjust to fit within the screen ratio */
+}
+
+/* Ensure slideshow images auto-fit the container */
+.hero-section .slideshow-container img {
+    width: 100%; /* Ensure the image spans the full width */
+    height: 100%; /* Ensure the image spans the full height */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+@media (max-width: 768px) {
+    .hero-section .slideshow-container img {
+        object-fit: contain; /* Ensure images fit within the screen ratio on mobile */
+    }
 }
 
 /* Responsive design for mobile devices */
@@ -570,5 +593,14 @@ body {
 
     .hero-section p {
         font-size: 1rem; /* Adjust paragraph font size */
+    }
+}
+
+/* Ensure slideshow images auto-adjust height on mobile */
+@media (max-width: 768px) {
+    .hero-section .slideshow-container img {
+        width: auto; /* Allow width to adjust proportionally */
+        height: 100%; /* Set height to fill the container */
+        object-fit: cover; /* Ensure images cover the container */
     }
 }
