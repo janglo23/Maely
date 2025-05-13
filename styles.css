@@ -155,11 +155,17 @@ footer {
 /* Updated card layout for 2 by 2 columns */
 .card-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Auto-fit cards with a minimum width */
     gap: 20px;
+    justify-content: center; /* Center the cards horizontally */
+    align-items: center; /* Center the cards vertically */
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
