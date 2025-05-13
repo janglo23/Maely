@@ -5,7 +5,7 @@
 body {
     background: url('images/kuromi-theme.png') no-repeat center center fixed;
     background-size: cover; /* Ensure the image covers the entire viewport */
-    font-family: 'Comic Sans MS', 'Baloo 2', cursive, sans-serif; /* Added fallback fonts */
+    font-family: 'Baloo 2', Arial, sans-serif; /* Use 'Baloo 2' with non-cursive fallbacks */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -498,12 +498,64 @@ body {
 .hero-section .slideshow-container img {
     width: 100%; /* Ensure the image spans the full width */
     height: 100%; /* Ensure the image spans the full height */
-    object-fit: cover; /* Ensure the image covers the container without distortion */
+    object-fit: contain; /* Ensure the entire image is displayed without cropping */
+    object-position: center;
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the entire image is displayed without cropping */
+    object-position: center;
+}
+
+/* Ensure slideshow images display the whole picture on all devices */
+.slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Display the entire image without cropping */
+    object-position: center;
+}
+
+/* Ensure slideshow images display the whole picture without cropping */
+.slideshow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto; /* Allow height to adjust based on image aspect ratio */
+}
+
+.slideshow-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensure the entire image is visible */
+    object-position: center;
 }
 
 @media (max-width: 768px) {
     .hero-section .slideshow-container img {
-        object-fit: contain; /* Ensure images fit within the screen ratio on mobile */
+        object-fit: contain; /* Maintain consistent behavior on small screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section .slideshow-container img {
+        width: auto; /* Allow width to adjust proportionally */
+        height: 100%; /* Set height to fill the container */
+        object-fit: cover; /* Ensure images cover the container */
+    }
+}
+
+@media (max-width: 768px) {
+    .slideshow-container {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .slideshow-container img {
+        object-fit: cover;
+        object-position: center;
     }
 }
 
@@ -602,5 +654,11 @@ body {
         width: auto; /* Allow width to adjust proportionally */
         height: 100%; /* Set height to fill the container */
         object-fit: cover; /* Ensure images cover the container */
+    }
+}
+
+@media (max-width: 768px) {
+    .slideshow-container img {
+        object-fit: contain; /* Ensure the entire image is visible on small screens */
     }
 }
