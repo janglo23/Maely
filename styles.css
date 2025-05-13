@@ -511,3 +511,34 @@ img {
         text-align: center;
     }
 }
+
+/* Ensure the background image is responsive on mobile */
+@media (max-width: 768px) {
+    body {
+        background: url('images/kuromi-theme.png') no-repeat center center fixed;
+        background-size: cover; /* Ensure the image scales properly */
+    }
+
+    .hero-section {
+        height: auto; /* Allow the hero section to adjust height on smaller screens */
+        padding: 20px; /* Add padding for better spacing */
+    }
+
+    .hero-section h1 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    .hero-section p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+
+    #countdown-container {
+        flex-direction: column; /* Stack countdown items vertically */
+        gap: 10px; /* Reduce gap between items */
+    }
+
+    .countdown-item {
+        width: 80px; /* Reduce size of countdown items */
+        height: 80px;
+    }
+}
